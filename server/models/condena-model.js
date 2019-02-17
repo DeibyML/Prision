@@ -1,18 +1,15 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const celdaSchema = new Schema({
-    IdCelda: { type: Number, required: true },
-    Largo: { type: Number, required: true },
-    Ancho: { type: Number, required: true },
-    Alto: { type: Number, required: true },
-    CapacidadMaxima: { type: Number, required: true },
-
-    Nombres: { type: String, required: true },
-    Apellido: { type: String, required: true },
-    FechaNac: { type: Date, required: true },
+const condenaSchema = new Schema({
     IdCondena: { type: Number, required: true },
-    IdCelda: { type: Number, required: true }
+    FechaCondena: { type: Date, required: true },
+    Duracion: { type: Number, required: true },
+    InicioCondena: { type: Date, required: true },
+    FinalCondena: { type: Date, required: true },
+    IdJuez: { type: Number, required: true },
+    IdTipoDelito: { type: Number, required: true },
+    IdPrisionero: { type: Number, required: true }
 });
 
-module.exports = mongoose.model('Prisionero', prisioneroSchema);
+module.exports = mongoose.model('Condena', condenaSchema);

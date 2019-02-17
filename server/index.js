@@ -13,6 +13,7 @@ server.use(express.json());
 
 // Routes
 server.use('/prisionero', require('./routes/prisionero-route'));
+server.use('/guardian', require('./routes/guardian-route'));
 
 // Inicia el servidor
 server.listen(server.get('port'), () => {

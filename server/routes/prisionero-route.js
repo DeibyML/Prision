@@ -1,10 +1,11 @@
 const express = require('express');
 const route = express.Router();
 
-route.get('/', (req, res) => {
-    res.send(res.json({
-        'API': 'Conectado al controller de PrisoÑero'
-    }));
-});
+const prisioneroCtrl = require('../controllers/prisionero.controller')
+
+route.get('/', prisioneroCtrl.getPrisioneros);
+route.get('/:idPrisionero', prisioneroCtrl.getPrisionero);
+route.post('/', prisioneroCtrl.createPrisionero);
+route.delete('/:idPrisionero', prisioneroCtrl.deletePrisionero);
 
 module.exports = route;
