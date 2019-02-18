@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PrisioneroService } from '../../services/prisionero.service';
+import { Prisionero } from '../../models/prisionero';
 
 @Component({
   selector: 'app-prisionero-component',
@@ -6,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrisioneroComponent implements OnInit {
 
-  constructor() { }
+  prisioneros: Prisionero[] = [];
+
+  constructor(private prisioneroService: PrisioneroService) { }
 
   ngOnInit() {
+    this.prisioneroService.getPrisioneros()
+        .subscribe((pris: Prisionero[]) => {
+          this.prisioneros = pris;
+        });
   }
 
 }

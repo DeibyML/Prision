@@ -1,1 +1,14 @@
-<app-prisionero-component></app-prisionero-component>>
+<nav>
+    <div class="nav-wrapper" style="background-color: #044472 !important;">
+        <a href="https://www.utadeo.edu.co/es" class="brand-logo"><img src="../assets/logo-universidad.png" style="margin-left:10px; margin-top: 4px; margin-bottom: 5px;" /></a>
+        <a routerLink="/home" class="brand-logo center"><img src="../assets/logo-universidad.png" style="margin-left:10px; margin-top: 4px; margin-bottom: 5px;" /></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a routerLink="/batallas" routerLinkActive="active">¡A la batalla!</a></li>
+            <li><a routerLink="/prisioneros">Prisioneros</a></li>
+            <li><a [routerLink]="['/condenas']">Condenas</a></li>
+            <li><a [routerLink]="['/celdas']">Celdas</a></li>
+            <li><a [routerLink]="['/guardianes']">Guardianes</a></li>
+        </ul>
+    </div>
+</nav>
+<router-outlet></router-outlet>

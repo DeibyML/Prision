@@ -8,7 +8,14 @@ import { CondenaComponent } from './components/condena/condena.component';
 import { JuezComponent } from './components/juez/juez.component';
 import { CeldaComponent } from './components/celda/celda.component';
 import { GuardianComponent } from './components/guardian/guardian.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './routes';
 
+import { HomeComponent } from './components/home/home.component';
+
+import { PrisioneroService } from './services/prisionero.service';
+import { BatallasComponent } from './components/batallas/batallas.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +25,20 @@ import { GuardianComponent } from './components/guardian/guardian.component';
     JuezComponent,
     CeldaComponent,
     GuardianComponent,
+    HomeComponent,
+    BatallasComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    PrisioneroService
+  ],
+  exports: [
+    RouterModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
