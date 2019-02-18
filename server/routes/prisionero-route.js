@@ -1,7 +1,7 @@
 const express = require('express');
 const route = express.Router();
 
-const prisioneroCtrl = require('../controllers/prisionero.controller')
+const prisioneroCtrl = require('../controllers/prisionero.controller');
 
 route.get('/', prisioneroCtrl.getPrisioneros);
 route.get('/:idPrisionero', prisioneroCtrl.getPrisionero);
