@@ -1,4 +1,6 @@
 # Prision
+App creada usando el estandar MEAN (Mongo, Express, Angular, NodeJs).
+
 Sistema de información para el control de prisioneros, condenas, celdas y guardianes de una carcel estatal.
 
 Ejecutar el comando:
