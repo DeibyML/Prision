@@ -11,6 +11,7 @@ prisioneroCtrl.createPrisionero = async(req, res) => {
         const newPrisionero = new Prisionero(req.body);
         await newPrisionero.save();
         res.json({
+            'status': 200,
             'message': 'Prisionero creado correctamente'
         });
     } catch (error) {

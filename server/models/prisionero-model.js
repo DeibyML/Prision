@@ -2,13 +2,12 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const prisioneroSchema = new Schema({
-    IdPrisionero: { type: Number, required: true },
     Nombres: { type: String, required: true },
     Apellidos: { type: String, required: true },
     FechaNac: { type: Date, required: true },
-    IdRaza: { type: Number, required: true },
-    IdSexo: { type: Number, required: true },
-    IdCelda: { type: Number, required: true },
+    Raza: { type: String, required: true },
+    Sexo: { type: String, required: true },
+    Celda: { type: String, required: false },
     Libre: { type: Boolean, required: true }
 });
 

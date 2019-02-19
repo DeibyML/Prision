@@ -1,5 +1,5 @@
 # Prision
-Sistema de información para el control de prisioneros de una carcel estatal.
+Sistema de información para el control de prisioneros, condenas, celdas y guardianes de una carcel estatal.
 
 Ejecutar el comando:
   npm i --save

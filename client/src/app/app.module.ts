@@ -10,12 +10,19 @@ import { CeldaComponent } from './components/celda/celda.component';
 import { GuardianComponent } from './components/guardian/guardian.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './routes';
 
-import { HomeComponent } from './components/home/home.component';
-
+// Services
 import { PrisioneroService } from './services/prisionero.service';
+
+// Components
+import { HomeComponent } from './components/home/home.component';
 import { BatallasComponent } from './components/batallas/batallas.component';
+import { CreatePrisioneroComponent } from './components/prisionero/create-prisionero/create-prisionero.component';
+import { CreateGuardianComponent } from './components/guardian/create-guardian/create-guardian.component';
+import { CreateCondenaComponent } from './components/condena/create-condena/create-condena.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +34,15 @@ import { BatallasComponent } from './components/batallas/batallas.component';
     GuardianComponent,
     HomeComponent,
     BatallasComponent,
+    CreatePrisioneroComponent,
+    CreateGuardianComponent,
+    CreateCondenaComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     PrisioneroService

@@ -1,0 +1,58 @@
+<div class="row" style="">
+    <blockquote>
+        <h4>Creación de un prisioñero</h4>
+    </blockquote>
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s6 l6">
+                <i class="material-icons prefix">account_circle</i>
+                <input [(ngModel)]="prisionero.Nombres" required name="nombres" id="firstname" type="text" class="validate">
+                <label for="firstname">Nombres</label>
+            </div>
+            <div class="input-field col s6 l6">
+                <input [(ngModel)]="prisionero.Apellidos" required name="lastname" id="lastname" type="text" class="validate">
+                <label for="lastname">Apellidos</label>
+            </div>
+            <!-- <div class="input-field col s6 l6">
+                <i class="material-icons prefix">date_range</i>
+                <input [(ngModel)]="prisionero.FechaNac" required id="date" name="fechanac" type="text" class="datepicker">
+                <label for="date">Fecha nacimiento</label>
+            </div> -->
+            <div class="input-field col s6 l6">
+                <i class="material-icons prefix">date_range</i>
+                <input [(ngModel)]="prisionero.FechaNac" autocomplete="off" required id="date" name="fechanac" type="date" class="datepicker">
+                <label for="date">Fecha nacimiento</label>
+            </div>
+            <div class="input-field col s6 l6">
+                <p><label>
+                  <input [(ngModel)]="prisionero.Sexo" autocomplete="off" required name="sexo" value="Macho" type="radio" checked />
+                  <span>Macho</span>
+                </label>
+
+                    <label>
+                  <input [(ngModel)]="prisionero.Sexo" required name="sexox" value="Hembra" type="radio" />
+                  <span>Hembra</span>
+                </label>
+                </p>
+            </div>
+
+            <div class="input-field col s2 m2 l2">
+                <a class='dropdown-trigger btn' data-target='razas'>Raza</a>
+                <ul id='razas' class='dropdown-content'>
+                    <li *ngFor="let raza of razas"><a (click)="setRaza(raza)">{{ raza }}</a></li>
+                </ul>
+            </div>
+
+            <div class="input-field col s3 l3">
+                <label>{{ razaAct }}</label>
+            </div>
+
+            <div class="modal-footer l12 s12">
+                <!-- <a class="modal-close waves-effect waves-green btn-flat">Crear prisionero</a> -->
+                <button class="modal-close btn waves-effect waves-light" (click)="createPrisionero()" type="submit" name="action">Crear prisionero
+                    <i class="material-icons right">check</i>
+                  </button>
+            </div>
+        </div>
+    </form>
+</div>

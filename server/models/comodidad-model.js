@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const comodidadSchema = new Schema({
-    IdComodidad: { type: Number, required: true },
     Nombre: { type: String, required: true },
     Estado: { type: Boolean, require: true }
 });

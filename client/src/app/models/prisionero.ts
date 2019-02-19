@@ -1,11 +1,10 @@
-export class Prisionero {
+import { Persona } from './persona';
+
+export class Prisionero extends Persona {
     _id: string;
-    IdPrisionero: string;
-    Nombres: string;
-    Apellidos: string;
     FechaNac: Date;
-    IdRaza: number;
-    IdSexo: number;
-    IdCelda: number;
+    Raza: string;
+    Sexo: string;
+    Celda: string;
     Libre: boolean;
 }
