@@ -29,10 +29,6 @@ export class CreatePrisioneroComponent implements OnInit {
     this.prisioneroCreated.emit(this.prisionero);
   }
 
-
-
-
-
   setRaza(raza: any) {
     this.razaAct = raza;
     this.prisionero.Raza = raza;

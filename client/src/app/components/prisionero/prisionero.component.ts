@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PrisioneroService } from '../../services/prisionero.service';
 import { Prisionero } from '../../models/prisionero';
+import * as moment from 'moment';
+moment.locale('es');
 declare var M;
 
 @Component({
@@ -27,6 +29,9 @@ export class PrisioneroComponent implements OnInit {
   getAllPrisioneros() {
     this.prisioneroService.getPrisioneros()
         .subscribe((pris: Prisionero[]) => {
+          for(let i = 0; i < pris.length; i++) {
+            pris[i].FechaNac = moment(pris[i].FechaNac).format('MMMM Do YYYY');
+          }
           this.prisioneros = pris;
         });
   }

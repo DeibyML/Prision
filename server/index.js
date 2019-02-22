@@ -16,6 +16,7 @@ server.use(cors({ origin: 'http://localhost:4200' }));
 // Routes
 server.use('/prisionero', require('./routes/prisionero-route'));
 server.use('/guardian', require('./routes/guardian-route'));
+server.use('/condena', require('./routes/condena-route'));
 
 // Inicia el servidor
 server.listen(server.get('port'), () => {

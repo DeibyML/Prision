@@ -6,6 +6,7 @@ import { GuardianComponent } from './components/guardian/guardian.component';
 import { NgModule } from '@angular/core';
 import { CeldaComponent } from './components/celda/celda.component';
 import { BatallasComponent } from './components/batallas/batallas.component';
+import { PeleasComponent } from './components/peleas/peleas.component';
 
 const appRoutes: Routes = [
     {

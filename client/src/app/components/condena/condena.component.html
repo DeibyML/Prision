@@ -1,3 +1,34 @@
-<p>
-  condena works!
-</p>
+<div style="margin-left: 10px;">
+
+    <h3 class="center">CONDENAS</h3>
+
+    <div>
+        <div class="col s6 m6 l6 center">
+            <a class="waves-effect waves-light btn indigo modal-trigger" data-target="createC"><i class="material-icons right">add_circle_outline</i>Crear condena</a>
+        </div>
+        <div id="createC" class="modal" style="min-height: 85%">
+            <app-create-condena (condenaCreated)="createCondena($event)"></app-create-condena>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px;">
+        <div *ngFor="let condena of condenas" class="card col s12 m6 l3" style="margin: 6px;">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="https://www.mundojuridico.info/wp-content/uploads/2017/02/22424088_m-300x207.jpg">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><strong>Tipo delito: </strong>{{ condena.IdTipoDelito }}<i class="material-icons right">more_vert</i></span>
+                <p>
+                    <a class="activator"></a>Condena # <small>{{ condena._id }}</small></p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text activator text-darken-4"><h5>Información Condena</h5><i class="material-icons right">close</i></span>
+                <p><strong>Duración (días):</strong> {{ condena.Duracion }}</p>
+                <p><strong>Juez:</strong> {{ condena.IdJuez }}</p>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>6

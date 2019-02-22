@@ -3,15 +3,15 @@
     <h3 class="center">PRISIONEROS</h3>
 
     <div>
-        <div class="col s6 m6 l6">
-            <a class="waves-effect waves-light btn indigo modal-trigger" href="#create"><i class="material-icons right">add_circle_outline</i>Crear prisionero</a>
-        </div>
-        <div id="create" class="modal" style="min-height: 85%">
-            <app-create-prisionero (prisioneroCreated)="createPrisionero($event)"></app-create-prisionero>
+        <div class="col s6 m6 l6 center">
+            <a class="waves-effect waves-light btn indigo modal-trigger" data-target="create"><i class="material-icons right">add_circle_outline</i>Crear prisionero</a>
+            <div id="create" class="modal" style="min-height: 85%">
+                <app-create-prisionero (prisioneroCreated)="createPrisionero($event)"></app-create-prisionero>
+            </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="margin-top: 20px;">
         <div *ngFor="let prisionero of prisioneros" class="card col s12 m6 l3" style="margin: 6px;">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="https://static.filmin.es/images/media/9358/1/still_0_3_790x398.jpg">
@@ -22,8 +22,9 @@
                     <a class="activator"></a>Prisionero # <small>{{ prisionero._id }}</small></p>
             </div>
             <div class="card-reveal">
-                <span class="card-title grey-text activator text-darken-4">Información prisionero<i class="material-icons right">close</i></span>
-                <p>{{ prisionero.FechaNac }}</p>
+                <span class="card-title grey-text activator text-darken-4"><h5>Información prisionero</h5><i class="material-icons right">close</i></span>
+                <p><strong>Fecha nacimiento:</strong> {{ prisionero.FechaNac }}</p>
+                <p><strong>Raza:</strong> {{ prisionero.Raza }}</p>
             </div>
         </div>
     </div>

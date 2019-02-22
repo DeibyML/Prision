@@ -1,3 +1,62 @@
-<p>
-  create-condena works!
-</p>
+<div class="row" style="">
+    <blockquote>
+        <h4>Creación de una condena</h4>
+    </blockquote>
+    <form class="col s12">
+        <div class="row">
+
+
+            <div class="input-field col s3 m3 l3">
+                <a class='dropdown-trigger btn' data-target='jueces'>Juez</a>
+                <ul id="jueces" class='dropdown-content'>
+                    <li *ngFor="let juez of jueces"><a (click)="setJuez(juez)">{{ juez }}</a></li>
+                </ul>
+            </div>
+            <div class="input-field col s3 l3">
+                <label>{{ juezAct }}</label>
+            </div>
+
+            <div class="input-field col s3 m3 l3">
+                <a class='dropdown-trigger btn' data-target='prisioneros'>Prisionero</a>
+                <ul id='prisioneros' class='dropdown-content'>
+                    <li *ngFor="let prisionero of prisioneros"><a (click)="setPrisionero(prisionero)">{{ prisionero.Nombres }} {{ prisionero.Apellidos }}</a></li>
+                </ul>
+            </div>
+            <div class="input-field col s3 l3">
+                <label>{{ prisioneroAct.Nombres }} {{ prisioneroAct.Apellidos }}</label>
+            </div>
+
+            <div class="input-field col s6 l6">
+                <i class="material-icons prefix">date_range</i>
+                <input [(ngModel)]="condena.InicioCondena" autocomplete="off" required id="date" name="fechanac" type="date" class="datepicker">
+                <label for="date">Fecha Inicio</label>
+            </div>
+
+            <div class="input-field col s6 l6">
+                <i class="material-icons prefix">date_range</i>
+                <input [(ngModel)]="condena.FinalCondena" autocomplete="off" required id="date" name="fechanac" type="date" class="datepicker">
+                <label for="date">Fecha Finaliza</label>
+            </div>
+
+            <div class="input-field col s2 m2 l2">
+                <a class='dropdown-trigger btn' data-target='delitos'>Delito</a>
+                <ul id='delitos' class='dropdown-content'>
+                    <li *ngFor="let delito of delitos"><a (click)="setDelito(delito)">{{ delito }}</a></li>
+                </ul>
+            </div>
+            <div class="input-field col s3 l3">
+                <label>{{ delitoAct }}</label>
+            </div>
+            <div class="input-field col s7 m7 l7">
+            </div>
+
+        </div>
+
+        <div class="row modal-footer l12 s12 bottom down">
+            <button class="modal-close btn waves-effect waves-light" (click)="createCondena()" type="submit" name="action">Crear Condena
+                        <i class="material-icons right">check</i>
+                      </button>
+        </div>
+
+    </form>
+</div>

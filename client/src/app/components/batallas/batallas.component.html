@@ -1,3 +1,63 @@
-<p>
-  batallas works!
-</p>
+<div class="row">
+    <blockquote>
+        <h4 class="center">¡LA BATALLA!</h4>
+    </blockquote>
+    <form class="">
+        <div class="row">
+
+            <div class="input-field center col s12 l12">
+                <p><label>
+            <input (click)="changeSexo('Macho')" autocomplete="off" required name="sexo" value="Macho" type="radio"
+              checked />
+            <span>Entre machos</span>
+          </label>
+
+                    <label>
+            <input (click)="changeSexo('Hembra')" required name="sexo" value="Hembra" type="radio" />
+            <span>Entre hembras</span>
+          </label>
+                </p>
+            </div>
+
+
+            <div class="input-field row center col s12 l12">
+                <h4 class="center">Luchadores</h4>
+
+                <div class="center">
+
+                    <div class="input-field col s3 m3 l3">
+                        <a class='dropdown-trigger btn' data-target='prisioneros1'>Luchador 1</a>
+                        <ul id='prisioneros1' class='dropdown-content'>
+                            <li *ngFor="let prisionero1 of prisioneros"><a (click)="setLuchador1(prisionero1)">{{ prisionero1.Nombres }} {{ prisionero1.Apellidos }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="input-field col s3 l3">
+                        <label>{{ luchador1.Nombres }} {{ luchador1.Apellidos }}</label>
+                    </div>
+                </div>
+
+                <div class="center">
+
+                    <div class="input-field col s3 m3 l3">
+                        <a class='dropdown-trigger btn' data-target='prisioneros2'>Luchador 2</a>
+                        <ul id='prisioneros2' class='dropdown-content'>
+                            <li *ngFor="let prisionero2 of prisioneros"><a (click)="setLuchador2(prisionero2)">{{ prisionero2.Nombres }} {{ prisionero2.Apellidos }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="input-field col s3 l3">
+                        <label>{{ luchador2.Nombres }} {{ luchador2.Apellidos }}</label>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="modal-footer l12 s12">
+            <!-- <a class="modal-close waves-effect waves-green btn-flat">Crear prisionero</a> -->
+            <button class="modal-close btn waves-effect waves-light" (click)="createPrisionero()" type="submit" name="action">Crear prisionero
+        <i class="material-icons right">check</i>
+      </button>
+        </div>
+    </form>
+</div>

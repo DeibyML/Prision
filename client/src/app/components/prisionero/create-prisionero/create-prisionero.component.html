@@ -13,11 +13,6 @@
                 <input [(ngModel)]="prisionero.Apellidos" required name="lastname" id="lastname" type="text" class="validate">
                 <label for="lastname">Apellidos</label>
             </div>
-            <!-- <div class="input-field col s6 l6">
-                <i class="material-icons prefix">date_range</i>
-                <input [(ngModel)]="prisionero.FechaNac" required id="date" name="fechanac" type="text" class="datepicker">
-                <label for="date">Fecha nacimiento</label>
-            </div> -->
             <div class="input-field col s6 l6">
                 <i class="material-icons prefix">date_range</i>
                 <input [(ngModel)]="prisionero.FechaNac" autocomplete="off" required id="date" name="fechanac" type="date" class="datepicker">
@@ -47,12 +42,12 @@
                 <label>{{ razaAct }}</label>
             </div>
 
-            <div class="modal-footer l12 s12">
-                <!-- <a class="modal-close waves-effect waves-green btn-flat">Crear prisionero</a> -->
-                <button class="modal-close btn waves-effect waves-light" (click)="createPrisionero()" type="submit" name="action">Crear prisionero
+        </div>
+        <div class="modal-footer l12 s12">
+            <!-- <a class="modal-close waves-effect waves-green btn-flat">Crear prisionero</a> -->
+            <button class="modal-close btn waves-effect waves-light" (click)="createPrisionero()" type="submit" name="action">Crear prisionero
                     <i class="material-icons right">check</i>
                   </button>
-            </div>
         </div>
     </form>
 </div>
